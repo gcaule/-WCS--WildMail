@@ -7,10 +7,15 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-  <head>
-    <title>$Title$</title>
-  </head>
-  <body>
-  $END$
-  </body>
+    <head>
+        <title>Login</title>
+    </head>
+    <body>
+        <form method="get" action="${pageContext.request.contextPath}/mail/create">
+            <label for="loginEmail">Email : </label>
+            <input required type="email" name="loginEmailValue" id="loginEmail" placeholder="Your login email here..." />
+            <br />
+            <input type="submit" value="Login">
+        </form>
+    </body>
 </html>

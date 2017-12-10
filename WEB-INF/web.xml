@@ -3,4 +3,20 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
+    <servlet>
+        <servlet-name>mailCreateServlet</servlet-name>
+        <servlet-class>fr.wildcodeschool.wildmail.MailCreateServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>mailContentServlet</servlet-name>
+        <servlet-class>fr.wildcodeschool.wildmail.MailContentServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>mailCreateServlet</servlet-name>
+        <url-pattern>/mail/create</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>mailContentServlet</servlet-name>
+        <url-pattern>/mail/content</url-pattern>
+    </servlet-mapping>
 </web-app>
