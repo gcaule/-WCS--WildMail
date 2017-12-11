@@ -18,11 +18,6 @@ public class UserLoginServlet extends HttpServlet {
         if (loginEmailValue != null && !loginEmailValue.isEmpty())  {
             request.getSession().setAttribute("userEmail", loginEmailValue);
         }
-        UserBean userBean = new UserBean();
-        userBean.setEmail("");
-        userBean.setUsername("");
-        userBean.getEmail();
-        userBean.getUsername();
         String userMail = (String) request.getSession().getAttribute("userEmail");
         if (userMail != null && !userMail.isEmpty()) {
             request.getRequestDispatcher("/mail/create").forward(request, response);
