@@ -14,8 +14,13 @@ public class MailCreateServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String loginEmailValue = request.getParameter("loginEmailValue");
-        request.setAttribute("fromValue", loginEmailValue);
-        this.getServletContext().getRequestDispatcher("/mail_create.jsp").forward(request, response);
+
+        String emailValue = request.getParameter("loginEmailValue");
+        if (emailValue != null && !emailValue.isEmpty())  {
+            request.getSession().setAttribute("loginEmailValue", emailValue);
+        }
+
+        this.getServletContext().getRequestDispatcher("/mail_create.jsp")
+                .forward(request, response);
     }
 }

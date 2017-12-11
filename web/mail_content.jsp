@@ -10,14 +10,14 @@
     <head>
         <title>Email content</title>
     </head>
+
+    <p><strong>Name : </strong>${user.username}</p>
+
     <body>
-        <%
-            String fromValue = (String) request.getAttribute("fromValue");
-            String toValue = (String) request.getAttribute("toValue");
-            String contentValue = (String) request.getAttribute("contentValue");
-        %>
-        <p><strong>From : </strong><%= fromValue %></p>
-        <p><strong>To : </strong><%= toValue %></p>
-        <p><strong>Content :</strong> <%= contentValue %></p>
+
+        <p><strong>From : </strong>${sessionScope.loginEmailValue}</p>
+        <p><strong>To : </strong>${mail.to}</p>
+        <p><strong>Content : </strong>${mail.content}</p>
+
     </body>
 </html>
