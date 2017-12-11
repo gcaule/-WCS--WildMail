@@ -11,6 +11,10 @@
         <servlet-name>mailContentServlet</servlet-name>
         <servlet-class>fr.wildcodeschool.wildmail.MailContentServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>userLoginServlet</servlet-name>
+        <servlet-class>fr.wildcodeschool.wildmail.UserLoginServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>mailCreateServlet</servlet-name>
         <url-pattern>/mail/create</url-pattern>
@@ -18,5 +22,9 @@
     <servlet-mapping>
         <servlet-name>mailContentServlet</servlet-name>
         <url-pattern>/mail/content</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>userLoginServlet</servlet-name>
+        <url-pattern>/user/login</url-pattern>
     </servlet-mapping>
 </web-app>

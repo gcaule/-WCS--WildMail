@@ -1,3 +1,4 @@
+<jsp:useBean id="mailBean" scope="request" type="fr.wildcodeschool.wildmail.MailBean"/>
 <%--
   Created by IntelliJ IDEA.
   User: wilder
@@ -11,13 +12,8 @@
         <title>Email content</title>
     </head>
     <body>
-        <%
-            String fromValue = (String) request.getAttribute("fromValue");
-            String toValue = (String) request.getAttribute("toValue");
-            String contentValue = (String) request.getAttribute("contentValue");
-        %>
-        <p><strong>From : </strong><%= fromValue %></p>
-        <p><strong>To : </strong><%= toValue %></p>
-        <p><strong>Content :</strong> <%= contentValue %></p>
+        <p><strong>From : </strong>${sessionScope.userEmail}</p>
+        <p><strong>To : </strong>${mailBean.to}</p>
+        <p><strong>Content : </strong>${mailBean.content}</p>
     </body>
 </html>

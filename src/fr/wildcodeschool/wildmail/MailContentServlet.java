@@ -13,9 +13,11 @@ public class MailContentServlet extends HttpServlet {
         String createFromValue = request.getParameter("createFromValue");
         String createToValue = request.getParameter("createToValue");
         String createContentValue = request.getParameter("createContentValue");
-        request.setAttribute("fromValue", createFromValue);
-        request.setAttribute("toValue", createToValue);
-        request.setAttribute("contentValue", createContentValue);
+        MailBean mailBean = new MailBean();
+        mailBean.setFrom(createFromValue);
+        mailBean.setTo(createToValue);
+        mailBean.setContent(createContentValue);
+        request.setAttribute("mailBean", mailBean);
         this.getServletContext().getRequestDispatcher("/mail_content.jsp").forward(request, response);
     }
 

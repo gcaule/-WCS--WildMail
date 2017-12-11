@@ -11,17 +11,14 @@
         <title>Send an email</title>
     </head>
     <body>
-        <%
-            String fromValue = (String) request.getAttribute("fromValue");
-        %>
         <form method="post" action="${pageContext.request.contextPath}/mail/content">
-            <input required hidden type="email" name="createFromValue" id="createFrom" value="<%= fromValue %>" />
             <label for="createTo">To : </label>
             <input required type="email" name="createToValue" id="createTo" placeholder="Send to..." />
             <br />
             <label for="createContent">Content : </label>
             <br />
             <textarea required name="createContentValue" id="createContent" placeholder="Your content here..."></textarea>
+            <br />
             <input type="submit" value="Send" />
         </form>
     </body>
